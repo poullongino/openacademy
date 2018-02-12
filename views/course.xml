@@ -9,11 +9,20 @@
           <sheet>
             <group>
               <field name="name"/>
+              <field name="responsible_id"/>
             </group>
             <group>
               <notebook>
                 <page string="Description">
                   <field name="description"/>
+                </page>
+                <page string="Sessions">
+                  <field name="session_ids">
+                  <tree string="Registered Sessions">
+                    <field name="name"/>
+                    <field name="instructor_id"/>
+                  </tree>
+                  </field>
                 </page>
               </notebook>
             </group>
@@ -22,14 +31,16 @@
       </field>
     </record>
 
-     <!--explicit list view definition -->
+     <!--
+        OVERRIDING AUTOMATICALLY GENERATED LIST VIEW
+      -->
     <record model="ir.ui.view" id="openacademy.list">
       <field name="name">openacademy.list</field>
       <field name="model">openacademy.course</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="description"/>
+          <field name="responsible_id"/>
           <!--<field name="value2"/>-->
         </tree>
       </field>
