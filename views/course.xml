@@ -1,0 +1,72 @@
+<odoo>
+  <data>
+    <!--Course Form View-->
+    <record model="ir.ui.view" id="course_form_view">
+      <field name="name">course.form</field>
+      <field name="model">openacademy.course</field>
+      <field name="arch" type="xml">
+        <form string="Course Form">
+          <sheet>
+            <group>
+              <field name="name"/>
+            </group>
+            <group>
+              <notebook>
+                <page string="Description">
+                  <field name="description"/>
+                </page>
+              </notebook>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+     <!--explicit list view definition -->
+    <record model="ir.ui.view" id="openacademy.list">
+      <field name="name">openacademy.list</field>
+      <field name="model">openacademy.course</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <!--<field name="value2"/>-->
+        </tree>
+      </field>
+    </record>
+
+   <!--
+      COURSE SEARCH VIEW
+    -->
+    <record model="ir.ui.view" id="course_search_view">
+      <field name="name">course.search</field>
+      <field name="model">openacademy.course</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="description"/>
+        </search>
+      </field>
+    </record>
+
+     <!--
+     actions opening views on models
+      -->
+    <record model="ir.actions.act_window" id="course_list_action">
+      <field name="name">Courses</field>
+      <field name="res_model">openacademy.course</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+     <!--Top menu item -->
+    <menuitem name="Open Academy" id="main_openacademy_menu"/>
+     <!--menu categories -->
+    <menuitem name="Open Academy" id="openacademy_menu" parent="main_openacademy_menu"/>
+    <!--<menuitem name="Menu 2" id="openacademy.menu_2" parent="openacademy.menu_root"/>-->
+     <!--actions -->
+    <menuitem name="Courses" id="courses_menu" parent="openacademy_menu"
+              action="course_list_action"/>
+    <!--<menuitem name="Sessions" id="sessions_menu" parent="openacademy_menu"-->
+              <!--action="session_list_action"/>-->
+  </data>
+</odoo>
