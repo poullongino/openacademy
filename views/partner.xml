@@ -13,6 +13,7 @@
                     <page string="Sessions">
                         <group>
                             <field name="instructor"/>
+                            <field name="student"/>
                             <field name="session_ids"/>
                         </group>
                     </page>
