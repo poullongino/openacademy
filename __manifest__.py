@@ -28,6 +28,7 @@
         #'security/ir.model.access.csv',
         'views/course.xml',
         'views/session.xml',
+        'views/partner.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

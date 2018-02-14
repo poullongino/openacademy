@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../PythonWebDevelopment/Secret-Messages/.idea/Secret-Messages.iml" filepath="$PROJECT_DIR$/../../PythonWebDevelopment/Secret-Messages/.idea/Secret-Messages.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/openacademy.iml" filepath="$PROJECT_DIR$/.idea/openacademy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../todo_app/.idea/todo_app.iml" filepath="$PROJECT_DIR$/../todo_app/.idea/todo_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../PythonWebDevelopment/Unit-2/yatzy/.idea/yatzy.iml" filepath="$PROJECT_DIR$/../../PythonWebDevelopment/Unit-2/yatzy/.idea/yatzy.iml" />
     </modules>
   </component>
 </project>
