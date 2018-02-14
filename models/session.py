@@ -20,6 +20,16 @@ class Session(models.Model):
     active = fields.Boolean(default = True)
 
 
+    def _warning(self, title, message):
+
+        """ Function to Display Warnings """
+
+        return {'warning': {
+            'title': title,
+            'message': message,
+        }}
+
+
     @api.depends("seats", "attendee_ids")
     def _taken_seats(self):
 
@@ -30,4 +40,15 @@ class Session(models.Model):
                 r.taken_seats = 0.0
             else:
                 r.taken_seats = 100.0 * len(r.attendee_ids) / r.seats
+
+
+    @api.onchange('seats', 'attendee_ids')
+    def _verify_valid_seats(self):
+
+        """ Explicit Onchange to Warn about Invalid Seats """
+
+        if self.seats < 0:
+            return self._warning("Incorrect 'seats' value",  "The number of available seats may not be negative")
+        if self.seats < len(self.attendee_ids):
+            return self._warning("Too many attendees", "Increase seats or remove excess attendees")
 
