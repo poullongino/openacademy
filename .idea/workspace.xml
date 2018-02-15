@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2278007e-73c3-4fd8-a7fd-c9e2c4e66d1b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/models/course.py" afterPath="$PROJECT_DIR$/models/course.py" />
       <change beforePath="$PROJECT_DIR$/models/session.py" afterPath="$PROJECT_DIR$/models/session.py" />
+      <change beforePath="$PROJECT_DIR$/views/course.xml" afterPath="$PROJECT_DIR$/views/course.xml" />
+      <change beforePath="$PROJECT_DIR$/views/session.xml" afterPath="$PROJECT_DIR$/views/session.xml" />
       <change beforePath="$PROJECT_DIR$/../todo_app/__manifest__.py" afterPath="$PROJECT_DIR$/../todo_app/__manifest__.py" />
+      <change beforePath="$PROJECT_DIR$/../todo_app/views/todo.xml" afterPath="$PROJECT_DIR$/../todo_app/views/todo.xml" />
       <change beforePath="$PROJECT_DIR$/../todo_user/__manifest__.py" afterPath="$PROJECT_DIR$/../todo_user/__manifest__.py" />
       <change beforePath="$PROJECT_DIR$/../todo_user/models/todo_task.py" afterPath="$PROJECT_DIR$/../todo_user/models/todo_task.py" />
       <change beforePath="$PROJECT_DIR$/../todo_user/views/views.xml" afterPath="$PROJECT_DIR$/../todo_user/views/todo_task.xml" />
@@ -18,12 +20,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="session.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="session.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/session.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-544">
-              <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
-              <folding />
+            <state relative-caret-position="442">
+              <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+              <folding>
+                <element signature="e#24#54#0" expanded="true" />
+                <element signature="e#1208#1345#0" expanded="false" />
+                <element signature="e#1386#1860#0" expanded="false" />
+                <element signature="e#1921#2399#0" expanded="false" />
+                <element signature="e#2481#2699#0" expanded="false" />
+                <element signature="e#2783#3284#0" expanded="false" />
+                <element signature="e#3374#3717#0" expanded="false" />
+                <element signature="e#3832#4148#0" expanded="false" />
+                <element signature="e#4174#4276#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -31,18 +43,18 @@
       <file leaf-file-name="course.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/course.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="72" column="26" lean-forward="false" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="26" />
+            <state relative-caret-position="85">
+              <caret line="59" column="53" lean-forward="false" selection-start-line="59" selection-start-column="53" selection-end-line="59" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="session.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="session.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/session.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="43" column="32" lean-forward="false" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+            <state relative-caret-position="340">
+              <caret line="123" column="55" lean-forward="false" selection-start-line="123" selection-start-column="55" selection-end-line="123" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -51,7 +63,7 @@
       <file leaf-file-name="course.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/course.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="578">
               <caret line="34" column="37" lean-forward="false" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
               <folding />
             </state>
@@ -76,7 +88,6 @@
         <option value="$PROJECT_DIR$/models/models.py" />
         <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/views/views.xml" />
-        <option value="$PROJECT_DIR$/views/course.xml" />
         <option value="$PROJECT_DIR$/../../PythonWebDevelopment/Unit-2/yatzy/hands.py" />
         <option value="$PROJECT_DIR$/../../PythonWebDevelopment/Unit-2/yatzy/dice.py" />
         <option value="$PROJECT_DIR$/models/poul.py" />
@@ -88,20 +99,21 @@
         <option value="$PROJECT_DIR$/../todo_app/models/todo.py" />
         <option value="$PROJECT_DIR$/models/partner.py" />
         <option value="$PROJECT_DIR$/views/partner.xml" />
-        <option value="$PROJECT_DIR$/../todo_app/views/todo.xml" />
         <option value="$PROJECT_DIR$/__manifest__.py" />
         <option value="$PROJECT_DIR$/../todo_app/__manifest__.py" />
         <option value="$PROJECT_DIR$/../todo_user/__manifest__.py" />
         <option value="$PROJECT_DIR$/../todo_user/models/__init__.py" />
         <option value="$PROJECT_DIR$/../todo_user/views/todo_task.xml" />
         <option value="$PROJECT_DIR$/../todo_user/models/todo_task.py" />
-        <option value="$PROJECT_DIR$/views/session.xml" />
         <option value="$PROJECT_DIR$/models/course.py" />
+        <option value="$PROJECT_DIR$/views/course.xml" />
+        <option value="$PROJECT_DIR$/../todo_app/views/todo.xml" />
         <option value="$PROJECT_DIR$/models/session.py" />
+        <option value="$PROJECT_DIR$/views/session.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-14" />
     <option name="y" value="20" />
     <option name="width" value="1380" />
@@ -131,16 +143,11 @@
           <expand>
             <path>
               <item name="openacademy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="openacademy" type="462c0819:PsiDirectoryNode" />
+              <item name="todo_app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="openacademy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="openacademy" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="openacademy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="openacademy" type="462c0819:PsiDirectoryNode" />
+              <item name="todo_app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -182,7 +189,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24925596" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -444,14 +451,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../todo_app/views/todo.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="65" lean-forward="false" selection-start-line="24" selection-start-column="65" selection-end-line="24" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../todo_user/models/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -502,34 +501,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/session.xml">
+    <entry file="file://$PROJECT_DIR$/models/course.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="43" column="32" lean-forward="false" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+        <state relative-caret-position="578">
+          <caret line="34" column="37" lean-forward="false" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../todo_app/views/todo.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="24" column="65" lean-forward="false" selection-start-line="24" selection-start-column="65" selection-end-line="24" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/course.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="72" column="26" lean-forward="false" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/course.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="34" column="37" lean-forward="false" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+        <state relative-caret-position="85">
+          <caret line="59" column="53" lean-forward="false" selection-start-line="59" selection-start-column="53" selection-end-line="59" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models/session.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-544">
-          <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+        <state relative-caret-position="442">
+          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#54#0" expanded="true" />
+            <element signature="e#1208#1345#0" expanded="false" />
+            <element signature="e#1386#1860#0" expanded="false" />
+            <element signature="e#1921#2399#0" expanded="false" />
+            <element signature="e#2481#2699#0" expanded="false" />
+            <element signature="e#2783#3284#0" expanded="false" />
+            <element signature="e#3374#3717#0" expanded="false" />
+            <element signature="e#3832#4148#0" expanded="false" />
+            <element signature="e#4174#4276#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/session.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="123" column="55" lean-forward="false" selection-start-line="123" selection-start-column="55" selection-end-line="123" selection-end-column="55" />
           <folding />
         </state>
       </provider>
