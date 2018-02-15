@@ -2,13 +2,13 @@
 {
     'name': "Open Academy",
 
-    'summary': """Manage trainings""",
+    'summary': """Manage Trainings""",
 
     'description': """
         Open Academy module for managing trainings:
-            - training courses
-            - training sessions
-            - attendees registration
+            - Training courses
+            - Training sessions
+            - Attendees registration
     """,
 
     'author': "PoulSociety",
@@ -25,7 +25,8 @@
 
     # always loaded
     'data': [
-        #'security/ir.model.access.csv',
+        'security/security.xml',
+        'security/ir.model.access.csv',
         'views/course.xml',
         'views/session.xml',
         'views/partner.xml',

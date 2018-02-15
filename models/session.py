@@ -22,6 +22,11 @@ class Session(models.Model):
     taken_seats = fields.Float(string = "Taken Seats", compute = "_taken_seats")
     active = fields.Boolean(default = True)
     color = fields.Integer()
+    state = fields.Selection([
+        ('draft', "Draft"),
+        ('confirmed', "Confirmed"),
+        ('done', "Done"),
+    ], default = 'draft')
 
 
     def _warning(self, title, message):
@@ -50,6 +55,18 @@ class Session(models.Model):
                 end_date = fields.Datetime.from_string(r.end_date)
                 r.duration = (end_date - start_date).days + 1
 
+
+    @api.multi
+    def action_draft(self):
+        self.state = 'draft'
+
+    @api.multi
+    def action_confirm(self):
+        self.state = 'confirmed'
+
+    @api.multi
+    def action_done(self):
+        self.state = 'done'
 
     @api.multi
     def copy(self, default=None):
