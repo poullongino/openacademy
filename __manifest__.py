@@ -2,13 +2,10 @@
 {
     'name': "Open Academy",
 
-    'summary': """Manage Trainings""",
+    'summary': """Course Management""",
 
     'description': """
-        Open Academy module for managing trainings:
-            - Training courses
-            - Training sessions
-            - Attendees registration
+        Open Academy allow you to manage your course, session, teacher and attendee 
     """,
 
     'author': "PoulSociety",
@@ -17,7 +14,7 @@
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml
     # for the full list
-    'category': 'Academic',
+    'category': 'Academy',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
@@ -30,6 +27,7 @@
         'views/course.xml',
         'views/session.xml',
         'views/partner.xml',
+        'report/session.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

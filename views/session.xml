@@ -31,6 +31,7 @@
                             </group>
                             <group string = "Schedule">
                                 <field name = "start_date"/>
+                                <field name = "end_date"/>
                                 <field name = "duration"/>
                                 <field name = "seats"/>
                                 <field name = "taken_seats" widget = "progressbar"/>
@@ -42,6 +43,37 @@
                 </form>
             </field>
         </record>
+
+
+        <!-- WIZARD VIEW -->
+        <record model="ir.ui.view" id="wizard_form_view">
+            <field name="name">wizard.form</field>
+            <field name="model">openacademy.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Add Attendees">
+                    <group>
+                        <field name="session_ids"/>
+                        <field name="attendee_ids"/>
+                    </group>
+                    <footer>
+                        <button name="subscribe" type="object"
+                                string="Subscribe" class="oe_highlight"/>
+                        or
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <act_window id="launch_session_wizard"
+                    name="Add Attendees"
+                    src_model="openacademy.session"
+                    res_model="openacademy.wizard"
+                    view_mode="form"
+                    target="new"
+                    key2="client_action_multi"/>
+
 
         <!--
             OVERRIDING AUTOMATICALLY GENERATED LIST VIEW
