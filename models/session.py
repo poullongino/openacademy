@@ -8,7 +8,7 @@ class Session(models.Model):
     _name = 'openacademy.session'
 
     name = fields.Char(required = True)
-    start_date = fields.Date(default = fields.Date.today())
+    start_date = fields.Date(default = fields.Date.today)
     duration = fields.Float(digits = (6, 2), help = "Duration in days", default = 1)
     seats = fields.Integer(string = "Number of seats")
     instructor_id = fields.Many2one('res.partner', string = "Instructor",
@@ -42,6 +42,7 @@ class Session(models.Model):
                 r.taken_seats = 100.0 * len(r.attendee_ids) / r.seats
 
 
+
     @api.onchange('seats', 'attendee_ids')
     def _verify_valid_seats(self):
 
@@ -52,3 +53,25 @@ class Session(models.Model):
         if self.seats < len(self.attendee_ids):
             return self._warning("Too many attendees", "Increase seats or remove excess attendees")
 
+
+    @api.constrains('instructor_id', 'attendee_ids')
+    def _check_instructor_not_in_attendees(self):
+
+        """
+           a constraint that checks that the instructor is not present in the attendees of his/her own session
+        """
+
+        for r in self:
+            if r.instructor_id and r.instructor_id in r.attendee_ids:
+                raise exceptions.ValidationError("A session's instructor can't be an attendee")
+
+
+    _sql_constraints = [
+        ('name_description_check',
+         'CHECK(name != description)',
+         "The title of the course should not be the description"),
+
+        ('name_unique',
+         'UNIQUE(name)',
+         "The course title must be unique"),
+    ]
