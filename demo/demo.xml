@@ -3,27 +3,32 @@
 
            <record id="object0" model="openacademy.teachers">
              <field name="name">John Dennis</field>
-             <!--<field name="value">0</field>-->
+             <field name="biography">"John" is a software engineer and philosopher trying to leave the world better
+                 than he found it. He codes for non-profits, eCommerce, and large-scale web apps</field>
            </record>
 
            <record id="object1" model="openacademy.teachers">
              <field name="name">Leah MacDonald</field>
-             <!--<field name="value">10</field>-->
+             <field name="biography">Leah is a web developer and teacher who is passionate about building scalable,
+                 data-driven web apps, especially ones that address old problems with new tech!</field>
            </record>
 
            <record id="object2" model="openacademy.teachers">
              <field name="name">Paulo Longino</field>
-             <!--<field name="value">20</field>-->
+             <field name="biography">Poul is a JavaScript developer working on large-scale applications.
+                 He's also a teacher who strives to support students in removing barriers to learning code.</field>
            </record>
 
            <record id="object3" model="openacademy.teachers">
-             <field name="name">Steven Ngailo</field>
-             <!--<field name="value">30</field>-->
+             <field name="name">Stephen Ngailo</field>
+             <field name="biography">Stephen is a developer, author of CSS: The Missing Manual,
+                 JavaScript and jQuery: The Missing Manual, and web development teacher.</field>
            </record>
 
            <record id="object4" model="openacademy.teachers">
              <field name="name">John Haule</field>
-             <!--<field name="value">40</field>-->
+             <field name="biography">All of his professional life, John has worked with computers online;
+                 he is a polyglot programmer and likes using the right tools for the job.</field>
            </record>
 
     </data>

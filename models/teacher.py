@@ -8,3 +8,4 @@ class Teachers(models.Model):
     _name = 'openacademy.teachers'
 
     name = fields.Char()
+    biography = fields.Html()
