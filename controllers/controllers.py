@@ -9,3 +9,13 @@ class Openacademy(http.Controller):
             'teachers': Teachers.search([])
         })
 
+
+    @http.route('/openacademy/<model("openacademy.teachers"):teacher>/', auth = 'public', website = True)
+    def teacher(self, teacher):
+
+        """ Returning Records when given their id """
+
+        return http.request.render('openacademy.biography', {
+            'person': teacher
+        })
+

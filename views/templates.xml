@@ -2,14 +2,31 @@
 <odoo>
     <data>
        <template id = "index">
-           <title>OpenAcademy</title>
-           <t t-foreach = "teachers" t-as = "teacher">
-               <p>
-                   <t t-esc = "teacher.id"/><t t-esc="teacher.name"/>
-               </p>
+           <t t-call = "website.layout">
+               <t t-set = "title">OpenAcademy</t>
+               <div class = "oe_structure">
+                   <div class="container">
+                       <t t-foreach = "teachers" t-as = "teacher">
+                           <p><a t-attf-href = "/openacademy/{{ slug(teacher) }}">
+                               <t t-esc = "teacher.name"/></a>
+                           </p>
+                       </t>
+                   </div>
+               </div>
            </t>
        </template>
-
+        <template id="biography">
+            <t t-call = "website.layout">
+                <t t-set="title">OpenAcademy</t>
+                <div class="oe_structure"/>
+                <div class="oe_structure">
+                    <div class="container">
+                        <h3><t t-esc="person.name"/></h3>
+                    </div>
+                </div>
+                <div class="oe_structure"/>
+            </t>
+        </template>
     </data>
 </odoo>
 
