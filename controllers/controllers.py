@@ -2,21 +2,10 @@
 from odoo import http
 
 class Openacademy(http.Controller):
-    @http.route('/openacademy/', auth='public')
+    @http.route('/openacademy/', auth='public', website = True)
     def index(self, **kw):
+        Teachers = http.request.env['openacademy.teachers']
         return http.request.render('openacademy.index', {
-            'teachers': ["Paulo Longino", "Steven Ngailo", "John Haule"]
+            'teachers': Teachers.search([])
         })
 
-    # @http.route('/openacademy/openacademy/objects/', auth='public')
-    # def list(self, **kw):
-    #     return http.request.render('openacademy.listing', {
-    #         'root': '/openacademy/openacademy',
-    #         'objects': http.request.env['openacademy.openacademy'].search([]),
-    #     })
-    #
-    # @http.route('/openacademy/openacademy/objects/<model("openacademy.openacademy"):obj>/', auth='public')
-    # def object(self, obj, **kw):
-    #     return http.request.render('openacademy.object', {
-    #         'object': obj
-    #     })
