@@ -7,6 +7,8 @@ class Session(models.Model):
 
     """ Session Model """
     _name = 'openacademy.session'
+    # _inherit = ['mail.thread']
+    _order = 'name'
 
     name = fields.Char(required = True)
     start_date = fields.Date(default = fields.Date.today)
@@ -22,6 +24,8 @@ class Session(models.Model):
     taken_seats = fields.Float(string = "Taken Seats", compute = "_taken_seats")
     active = fields.Boolean(default = True)
     color = fields.Integer()
+    level = fields.Selection(related = 'course_id.level', readonly = True)
+    attendees_count = fields.Integer("Attendees Count", compute = "_get_attendees_count", store = True)
     state = fields.Selection([
         ('draft', "Draft"),
         ('confirmed', "Confirmed"),
@@ -48,25 +52,47 @@ class Session(models.Model):
         """
 
         for r in self:
-            if not (r.start_date and r.end_date):
-                continue
-
+            if r.start_date and r.end_date:
                 start_date = fields.Datetime.from_string(r.start_date)
                 end_date = fields.Datetime.from_string(r.end_date)
                 r.duration = (end_date - start_date).days + 1
 
 
+    def _auto_transition(self):
+        for rec in self:
+            if rec.taken_seats >= 50.0 and rec.state == 'draft':
+                rec.action_confirm()
+
+
     @api.multi
     def action_draft(self):
-        self.state = 'draft'
+        for rec in self:
+            rec.state = 'draft'
+            rec.message_post(body = "Session %s of the course %s reset to draft" % (rec.name, rec.course_id.name))
+
 
     @api.multi
     def action_confirm(self):
-        self.state = 'confirmed'
+        for rec in self:
+            rec.state = 'confirmed'
+            rec.message_post(body="Session %s of the course %s confirmed" % (rec.name, rec.course_id.name))
+
 
     @api.multi
     def action_done(self):
-        self.state = 'done'
+        for rec in self:
+            rec.state = 'done'
+            rec.message_post(body="Session %s of the course %s done" % (rec.name, rec.course_id.name))
+
+    @api.multi
+    def write(self, vals):
+        res = super(Session, self).write(vals)
+        for rec in self:
+            rec._auto_transition()
+        if vals.get('instructor_id'):
+            self.message_subscribe([vals['instructor_id']])
+        return res
+
 
     @api.multi
     def copy(self, default=None):
@@ -85,6 +111,12 @@ class Session(models.Model):
 
         default['name'] = new_name
         return super(Session, self).copy(default)
+
+
+    @api.depends('attendee_ids')
+    def _get_attendees_count(self):
+        for session in self:
+            session.attendees_count = len(session.attendee_ids)
 
 
     @api.depends("seats", "attendee_ids")
@@ -111,8 +143,7 @@ class Session(models.Model):
         for r in self:
             if not (r.start_date and r.duration):
                 r.end_date = r.start_date
-                continue
-
+            else:
                 start = fields.Datetime.from_string(r.start_date)
                 duration = timedelta(days = r.duration, seconds = -1)
                 r.end_date = start + duration
@@ -128,6 +159,18 @@ class Session(models.Model):
         if self.seats < len(self.attendee_ids):
             return self._warning("Too many attendees", "Increase seats or remove excess attendees")
 
+    @api.onchange('start_date', 'end_date')
+    def _compute_duration(self):
+
+        """ VERIFY CORRECT START DATE AND END DATE """
+
+        if not (self.start_date and self.end_date):
+            return
+        if self.end_date < self.start_date:
+            return self._warning("Incorrect date value", "End date is earlier then start date")
+        delta = fields.Date.from_string(self.end_date) - fields.Date.from_string(self.start_date)
+        self.duration = delta.days + 1
+
 
     @api.constrains('instructor_id', 'attendee_ids')
     def _check_instructor_not_in_attendees(self):
@@ -139,6 +182,23 @@ class Session(models.Model):
         for r in self:
             if r.instructor_id and r.instructor_id in r.attendee_ids:
                 raise exceptions.ValidationError("A session's instructor can't be an attendee")
+
+    @api.constrains('seats', 'attendee_ids')
+    def _check_taken_seats(self):
+        for session in self:
+            if session.taken_seats > 100:
+                raise exceptions.ValidationError(
+                    'The room has %s available seats and there is %s attendees registered'
+                    % (session.seats, len(session.attendee_ids))
+                )
+
+    @api.model
+    def create(self, vals):
+        res = super(Session, self).create(vals)
+        res._auto_transition()
+        if vals.get('instructor_id'):
+            res.message_subscribe([vals['instructor_id']])
+        return res
 
 
     _sql_constraints = [

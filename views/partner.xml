@@ -21,6 +21,8 @@
             </field>
         </record>
 
+
+
         <!--
             ACCESS TO PARTNER CATEGORIES
         -->
@@ -44,6 +46,11 @@
             <field name="name">Contacts</field>
             <field name="res_model">res.partner</field>
             <field name="view_mode">tree,form</field>
+            <!--<field name="arch_base">{-->
+                <!--'tree_view_ref': 'openacademy.contact_tree_view',-->
+                <!--'form_view_ref': 'openacademy.contact_form_view',-->
+                <!--}-->
+            <!--</field>-->
         </record>
 
         <!--
