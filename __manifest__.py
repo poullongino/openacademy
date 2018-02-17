@@ -28,6 +28,7 @@
         'views/session.xml',
         'views/partner.xml',
         'views/templates.xml',
+        'views/teacher.xml',
         'report/session.xml',
     ],
     # only loaded in demonstration mode

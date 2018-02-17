@@ -77,14 +77,12 @@
     </record>
 
      <!--Top menu item -->
-    <menuitem name="Open Academy" id="main_openacademy_menu"/>
+    <menuitem sequence = "0" name="Open Academy" id="main_openacademy_menu"/>
      <!--menu categories -->
     <menuitem name="Open Academy" id="openacademy_menu" parent="main_openacademy_menu"/>
     <!--<menuitem name="Menu 2" id="openacademy.menu_2" parent="openacademy.menu_root"/>-->
      <!--actions -->
-    <menuitem name="Courses" id="courses_menu" parent="openacademy_menu"
+    <menuitem sequence="0" name="Courses" id="courses_menu" parent="openacademy_menu"
               action="course_list_action"/>
-    <!--<menuitem name="Sessions" id="sessions_menu" parent="openacademy_menu"-->
-              <!--action="session_list_action"/>-->
   </data>
 </odoo>
